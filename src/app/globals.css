@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .btn_white { 
+    @apply px-8 py-3 bg-white border-white text-green-50;
+    @apply hover:bg-neutral-50;
   }
-}
+  .btn_white_text  { 
+    @apply px-8 py-3 bg-white border-white text-gray-90;
+    @apply hover:bg-neutral-50;
+  }
+  .btn_green  { 
+    @apply px-8 py-5 text-white border-green-50 bg-green-50;
+    @apply hover:bg-green-50/80;
+  }
+  .btn_dark_green { 
+    @apply px-8 py-4 text-white bg-green-90;
+    @apply hover:bg-black;
+  }
+  .btn_dark_green_outline  { 
+    @apply px-8 py-5 text-white border-gray-20 bg-green-90;
+  }
+  
+  .hero-map {
+    @apply absolute top-0 right-0 w-full h-full bg-center bg-cover sm:-top-10 md:-top-28 bg-pattern-2 xl:-top-36 xl:-right-36;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .camp-quote {
+    @apply absolute -right-6 bottom-4 w-[140px] lg:bottom-10 xl:-right-8 xl:w-[186px] 2xl:right-0;
+  }
+
+  .feature-phone {
+    @apply absolute top-[13%] z-10 hidden max-w-[1500px] rotate-[15deg] md:-left-16 lg:flex  2xl:left-20;
+  }
+
+  .get-app {
+    @apply container relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-green-90 bg-pattern bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-[598px] 2xl:rounded-5xl;
+  }
 }
